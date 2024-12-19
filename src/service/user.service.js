@@ -16,6 +16,12 @@ class UserService {
     const [values] = await connection.execute(statement, [name]);
     return values;
   }
+
+  async getUsers() {
+    const statement = 'select * from `user`';
+    const [values] = await connection.execute(statement);
+    return values;
+  }
 }
 
 module.exports = new UserService();

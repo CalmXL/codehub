@@ -11,6 +11,15 @@ class UserController {
       data: result,
     };
   }
+
+  async getUsers(ctx, next) {
+    const result = await userService.getUsers();
+
+    ctx.body = {
+      message: '获取用户列表成功',
+      data: result,
+    };
+  }
 }
 
 module.exports = new UserController();
